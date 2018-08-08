@@ -1,1 +1,11 @@
+<!-- users/new.html.erb -->
+<h1>User: <%= @user.username %></h1>
 
+<h2>Email: <%= @user.email %></h2>
+
+<h2><%= pluralize(@user.comments_count, 'Comment') %></h2>
+<ul>
+  <% @user.comments.each do |comment| %>
+    <li><%= link_to comment.post_title, post_path(comment.post) %> <%= comment.post_content %>  <%= comment.content %></li>
+  <% end %>
+</ul>

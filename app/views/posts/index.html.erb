@@ -1,0 +1,11 @@
+<!-- posts/index.html.erb -->
+
+<h1>Posts Listing</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post)%>: <%= post.content %>
+      Number of Comments:
+      <%= post.comments_count %></li>
+  <% end %>
+</ul>

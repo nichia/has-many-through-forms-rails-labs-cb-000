@@ -1,0 +1,11 @@
+<!-- categories/index.html.erb -->
+
+<h1>Categories Listing</h1>
+
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= link_to category.name, category_path(category)%>
+      Number of Posts:
+      <%= category.posts_count %></li>
+  <% end %>
+</ul>
